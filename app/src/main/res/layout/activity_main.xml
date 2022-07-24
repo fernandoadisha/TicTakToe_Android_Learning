@@ -1,18 +1,132 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:orientation="vertical"
+    tools:context=".MainActivity"
+    android:background="@color/almostBlack"
+    >
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.5">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/winLoseTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="35dp"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <LinearLayout
+        style="@style/gridRow">
+
+        <Button
+            style="@style/playGrid"
+            android:id="@+id/btnA1"
+            android:text=""
+            android:onClick="a1Action"
+            />
+
+        <Button
+            style="@style/playGrid"
+            android:id="@+id/btnA2"
+            android:text=""
+            android:onClick="a2Action"
+            />
+
+        <Button
+            style="@style/playGrid"
+            android:id="@+id/btnA3"
+            android:text=""
+            android:onClick="a3Action"
+            />
+
+
+    </LinearLayout>
+    <LinearLayout
+        style="@style/gridRow">
+
+        <Button
+            style="@style/playGrid"
+            android:id="@+id/btnB1"
+            android:text=""
+            android:onClick="b1Action"
+            />
+
+        <Button
+            style="@style/playGrid"
+            android:id="@+id/btnB2"
+            android:text=""
+            android:onClick="b2Action"
+            />
+
+        <Button
+            style="@style/playGrid"
+            android:id="@+id/btnB3"
+            android:text=""
+            android:onClick="b3Action"
+            />
+
+
+    </LinearLayout>
+    <LinearLayout
+        style="@style/gridRow">
+
+        <Button
+            style="@style/playGrid"
+            android:id="@+id/btnC1"
+            android:text=""
+            android:onClick="c1Action"
+            />
+
+        <Button
+            style="@style/playGrid"
+            android:id="@+id/btnC2"
+            android:text=""
+            android:onClick="c2Action"
+            />
+
+        <Button
+            style="@style/playGrid"
+            android:id="@+id/btnC3"
+            android:text=""
+            android:onClick="c3Action"
+            />
+
+
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Win Ratio"
+            android:textColor="@color/white"
+            android:textSize="35sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+</LinearLayout>
