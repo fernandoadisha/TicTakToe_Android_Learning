@@ -294,4 +294,56 @@ class MainActivity : AppCompatActivity() {
             btnC3.setBackgroundColor(ContextCompat.getColor(this, R.color.winBoxColor))
         }
     }
+
+    private fun gridReset() {
+        //resetting back to default color
+        btnA1.setBackgroundColor(ContextCompat.getColor(this, R.color.almostBlack))
+        btnA2.setBackgroundColor(ContextCompat.getColor(this, R.color.almostBlack))
+        btnA3.setBackgroundColor(ContextCompat.getColor(this, R.color.almostBlack))
+
+        btnB1.setBackgroundColor(ContextCompat.getColor(this, R.color.almostBlack))
+        btnB2.setBackgroundColor(ContextCompat.getColor(this, R.color.almostBlack))
+        btnB3.setBackgroundColor(ContextCompat.getColor(this, R.color.almostBlack))
+
+        btnC1.setBackgroundColor(ContextCompat.getColor(this, R.color.almostBlack))
+        btnC2.setBackgroundColor(ContextCompat.getColor(this, R.color.almostBlack))
+        btnC3.setBackgroundColor(ContextCompat.getColor(this, R.color.almostBlack))
+
+        //resetting grid
+        btnA1.text = ""
+        btnB1.text = ""
+        btnC1.text = ""
+
+        btnA2.text = ""
+        btnB2.text = ""
+        btnC2.text = ""
+
+        btnA3.text = ""
+        btnB3.text = ""
+        btnC3.text = ""
+
+        //resetting grid access
+        a1Click=true
+        b1Click=true
+        c1Click=true
+
+        a2Click=true
+        b2Click=true
+        c2Click=true
+
+        a3Click=true
+        b3Click=true
+        c3Click=true
+
+        //resetting turns
+        drawCount=0
+        gamePlayable = true
+        winLoseTV.text = ""
+    }
+
+    fun resetAction(view: View) {
+        p1Chance = true
+        gridReset()
+    }
+    fun nextAction(view: View) {}
 }

@@ -133,23 +133,26 @@
         android:layout_weight="0.5">
 
         <Button
+            android:id="@+id/resetButton"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:backgroundTint="@color/darkRed"
             android:text="Reset"
             android:textSize="20dp"
             android:layout_margin="4dp"
-
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            android:onClick="resetAction"/>
 
         <Button
+            android:id="@+id/nextButton"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:backgroundTint="@color/goGreen"
             android:text="Next"
             android:textSize="20dp"
             android:layout_margin="4dp"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            android:onClick="nextAction"/>
 
 
     </LinearLayout>
