@@ -39,7 +39,6 @@ class MainActivity : AppCompatActivity() {
 
     fun a1Action(view: View) {
         if(a1Click && gamePlayable){
-            //btnA1.setBackgroundColor(ContextCompat.getColor(this, R.color.goGreen))
             if (p1Chance) {
                 btnA1.text = "X"
                 p1Chance = false
@@ -178,12 +177,15 @@ class MainActivity : AppCompatActivity() {
         var c2 = btnC2.text
         var c3 = btnC3.text
 
+        var sList: List<String> = listOf()
+
 
         if(drawCount>9){
             winLoseTV.text = "Draw"
         }
         else{ //vertical 3 rows
             if(a1==a2 && a2==a3 && a1!="") {
+                sList = listOf("a1","a2","a3")
                 if(a1=="X")
                     playerOneWin()
                 else
@@ -191,6 +193,7 @@ class MainActivity : AppCompatActivity() {
                 gamePlayable = false
             }
             else if(b1==b2 && b2==b3 && b1!="") {
+                sList = listOf("b1","b2","b3")
                 if(b1=="X")
                     playerOneWin()
                 else
@@ -198,6 +201,7 @@ class MainActivity : AppCompatActivity() {
                 gamePlayable = false
             }
             else if(c1==c2 && c2==c3 && c1!="") {
+                sList = listOf("c1","c2","c3")
                 if(c1=="X")
                     playerOneWin()
                 else
@@ -205,6 +209,7 @@ class MainActivity : AppCompatActivity() {
                 gamePlayable = false
             }  //horizontal 3 rows
             else if(a1==b1 && c1==b1 && a1!="") {
+                sList = listOf("a1","b1","c1")
                 if(a1=="X")
                     playerOneWin()
                 else
@@ -212,6 +217,7 @@ class MainActivity : AppCompatActivity() {
                 gamePlayable = false
             }
             else if(a2==b2 && b2==c2 && a2!="") {
+                sList = listOf("a2","b2","c2")
                 if(a2=="X")
                     playerOneWin()
                 else
@@ -219,6 +225,7 @@ class MainActivity : AppCompatActivity() {
                 gamePlayable = false
             }
             else if(a3==b3 && b3==c3 && a3!="") {
+                sList = listOf("a3","b3","c3")
                 if(a3=="X")
                     playerOneWin()
                 else
@@ -226,6 +233,7 @@ class MainActivity : AppCompatActivity() {
                 gamePlayable = false
             } //cross winnings
             else if(a1==b2 && b2==c3 && a1!="") {
+                sList = listOf("a1","b2","c3")
                 if(a1=="X")
                     playerOneWin()
                 else
@@ -233,6 +241,7 @@ class MainActivity : AppCompatActivity() {
                 gamePlayable = false
             }
             else if(a3==b2 && b2==c1 && a3!="") {
+                sList = listOf("a3","b2","c1")
                 if(a3=="X")
                     playerOneWin()
                 else
@@ -243,6 +252,7 @@ class MainActivity : AppCompatActivity() {
                 winLoseTV.text = "Draw"
             }
         }
+        colorButton(sList)
     }
 
     private fun playerOneWin() {
@@ -251,5 +261,37 @@ class MainActivity : AppCompatActivity() {
 
     private fun playerTwoWin() {
         winLoseTV.text = "$pTwoName Won"
+    }
+
+    private fun colorButton(btnArray: List<String>) {
+        if(btnArray.contains("a1")){
+            btnA1.setBackgroundColor(ContextCompat.getColor(this, R.color.winBoxColor))
+        }
+        if(btnArray.contains("a2")){
+            btnA2.setBackgroundColor(ContextCompat.getColor(this, R.color.winBoxColor))
+        }
+        if(btnArray.contains("a3")){
+            btnA3.setBackgroundColor(ContextCompat.getColor(this, R.color.winBoxColor))
+        }
+
+        if(btnArray.contains("b1")){
+            btnB1.setBackgroundColor(ContextCompat.getColor(this, R.color.winBoxColor))
+        }
+        if(btnArray.contains("b2")){
+            btnB2.setBackgroundColor(ContextCompat.getColor(this, R.color.winBoxColor))
+        }
+        if(btnArray.contains("b3")){
+            btnB3.setBackgroundColor(ContextCompat.getColor(this, R.color.winBoxColor))
+        }
+
+        if(btnArray.contains("c1")){
+            btnC1.setBackgroundColor(ContextCompat.getColor(this, R.color.winBoxColor))
+        }
+        if(btnArray.contains("c2")){
+            btnC2.setBackgroundColor(ContextCompat.getColor(this, R.color.winBoxColor))
+        }
+        if(btnArray.contains("c3")){
+            btnC3.setBackgroundColor(ContextCompat.getColor(this, R.color.winBoxColor))
+        }
     }
 }
