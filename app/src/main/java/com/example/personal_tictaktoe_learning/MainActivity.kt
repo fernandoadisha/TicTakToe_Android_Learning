@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
+import android.widget.Toast
 import androidx.core.content.ContextCompat
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -29,12 +30,13 @@ class MainActivity : AppCompatActivity() {
     var pOneName = "Player 01"
     var pTwoName = "Player 02"
 
+    var p1WinCount: Int = 0
+    var p2WinCount: Int = 0
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-        //initializing buttons
     }
 
     fun a1Action(view: View) {
@@ -251,15 +253,21 @@ class MainActivity : AppCompatActivity() {
             else if(drawCount>=9){
                 winLoseTV.text = "Draw"
             }
+            else {
+                opShower()
+            }
         }
         colorButton(sList)
+        winRatioTV.text="$p1WinCount - $p2WinCount"
     }
 
     private fun playerOneWin() {
+        p1WinCount++
         winLoseTV.text = "$pOneName Won"
     }
 
     private fun playerTwoWin() {
+        p2WinCount++
         winLoseTV.text = "$pTwoName Won"
     }
 
@@ -339,11 +347,32 @@ class MainActivity : AppCompatActivity() {
         drawCount=0
         gamePlayable = true
         winLoseTV.text = ""
+        winRatioTV.text="$p1WinCount - $p2WinCount"
     }
 
     fun resetAction(view: View) {
         p1Chance = true
+
+        //win count reset
+        p1WinCount = 0
+        p2WinCount = 0
+
         gridReset()
+        opShower()
     }
-    fun nextAction(view: View) {}
+    fun nextAction(view: View) {
+        gridReset()
+        opShower()
+    }
+
+    private fun opShower(){
+        if(gamePlayable){
+            if(p1Chance){
+                Toast.makeText(this, "$pOneName Chance", Toast.LENGTH_SHORT).show()
+            }
+            else{
+                Toast.makeText(this, "$pTwoName Chance", Toast.LENGTH_SHORT).show()
+            }
+        }
+    }
 }
