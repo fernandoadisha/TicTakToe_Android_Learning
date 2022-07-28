@@ -27,8 +27,8 @@ class MainActivity : AppCompatActivity() {
     var c2Click: Boolean = true
     var c3Click: Boolean = true
 
-    var pOneName = "Player 01"
-    var pTwoName = "Player 02"
+    var pOneName = "Not defined 01"
+    var pTwoName = "Not defined 02"
 
     var p1WinCount: Int = 0
     var p2WinCount: Int = 0
@@ -37,6 +37,10 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        //getting names from NameInputActivity
+        pOneName=intent.getStringExtra("playerOneNameIntent").toString()
+        pTwoName=intent.getStringExtra("playerTwoNameIntent").toString()
     }
 
     fun a1Action(view: View) {
@@ -368,10 +372,10 @@ class MainActivity : AppCompatActivity() {
     private fun opShower(){
         if(gamePlayable){
             if(p1Chance){
-                Toast.makeText(this, "$pOneName Chance", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "$pOneName's Chance", Toast.LENGTH_SHORT).show()
             }
             else{
-                Toast.makeText(this, "$pTwoName Chance", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "$pTwoName's Chance", Toast.LENGTH_SHORT).show()
             }
         }
     }

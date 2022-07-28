@@ -9,14 +9,12 @@
     tools:context=".NameInputActivity">
 
 
-
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="0.7"
-        android:padding="40sp"
-        android:background="@color/darkGrey">
+        android:background="@color/darkGrey"
+        android:padding="40sp">
 
         <TextView
             android:id="@+id/welcomeTextTV"
@@ -24,39 +22,38 @@
             android:layout_height="wrap_content"
             android:text="Tik Tac Toe"
             android:textAlignment="center"
-            android:textSize="45sp"
             android:textColor="@color/white"
-            app:layout_constraintBottom_toStartOf="parent"
+            android:textSize="45sp"
+            app:layout_constraintBottom_toTopOf="@+id/playerOneNameET"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            />
-
-    <EditText
-        style="@style/nameInput"
-        android:id="@+id/playerOneName"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:hint="Player One Name"
-        android:layout_marginTop="100dp"
-
-        app:layout_constraintBottom_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/welcomeTextTV"
-        />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
+            android:id="@+id/playerOneNameET"
             style="@style/nameInput"
-            android:id="@+id/playerTwoName"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="100dp"
+            android:hint="Player One Name"
+
+            app:layout_constraintBottom_toTopOf="@id/playerTwoNameET"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/welcomeTextTV" />
+
+        <EditText
+            android:id="@+id/playerTwoNameET"
+            style="@style/nameInput"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:hint="Player Two Name"
 
-            app:layout_constraintBottom_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/playerOneName" />
+            app:layout_constraintTop_toBottomOf="@id/playerOneNameET" />
+
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -69,6 +66,7 @@
 
         <Button
             android:id="@+id/continueBtn"
+            android:onClick="withNameAction"
             android:text="Continue With Names"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -86,6 +84,7 @@
 
         <Button
             android:id="@+id/guestBtn"
+            android:onClick="withoutNameAction"
             android:text="Guests"
             android:layout_width="0dp"
             android:layout_height="match_parent"

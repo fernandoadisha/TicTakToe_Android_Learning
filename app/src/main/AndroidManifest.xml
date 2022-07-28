@@ -14,10 +14,10 @@
         android:theme="@style/Theme.Personal_TIcTakToe_Learning"
         tools:targetApi="31">
         <activity
-            android:name=".NameInputActivity"
+            android:name=".MainActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".NameInputActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
