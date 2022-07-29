@@ -62,13 +62,16 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="0.3"
-        android:padding="2dp">
+        android:padding="2dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp">
 
         <Button
             android:id="@+id/continueBtn"
             android:onClick="withNameAction"
             android:text="Continue With Names"
             android:layout_width="0dp"
+            android:textSize="20dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:backgroundTint="@color/goGreen"/>
@@ -79,13 +82,16 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="0.3"
-        android:padding="2dp">
+        android:padding="2dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp">
 
 
         <Button
             android:id="@+id/guestBtn"
             android:onClick="withoutNameAction"
             android:text="Guests"
+            android:textSize="20dp"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"

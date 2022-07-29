@@ -41,6 +41,7 @@ class MainActivity : AppCompatActivity() {
         //getting names from NameInputActivity
         pOneName=intent.getStringExtra("playerOneNameIntent").toString()
         pTwoName=intent.getStringExtra("playerTwoNameIntent").toString()
+        chanceTV.text = "$pOneName's Chance"
     }
 
     fun a1Action(view: View) {
@@ -188,6 +189,7 @@ class MainActivity : AppCompatActivity() {
 
         if(drawCount>9){
             winLoseTV.text = "Draw"
+            chanceTV.text = ""
         }
         else{ //vertical 3 rows
             if(a1==a2 && a2==a3 && a1!="") {
@@ -256,6 +258,7 @@ class MainActivity : AppCompatActivity() {
             }
             else if(drawCount>=9){
                 winLoseTV.text = "Draw"
+                chanceTV.text = ""
             }
             else {
                 opShower()
@@ -268,11 +271,13 @@ class MainActivity : AppCompatActivity() {
     private fun playerOneWin() {
         p1WinCount++
         winLoseTV.text = "$pOneName Won"
+        chanceTV.text = ""
     }
 
     private fun playerTwoWin() {
         p2WinCount++
         winLoseTV.text = "$pTwoName Won"
+        chanceTV.text = ""
     }
 
     private fun colorButton(btnArray: List<String>) {
@@ -361,6 +366,7 @@ class MainActivity : AppCompatActivity() {
         p1WinCount = 0
         p2WinCount = 0
 
+        chanceTV.text = ""
         gridReset()
         opShower()
     }
@@ -372,10 +378,10 @@ class MainActivity : AppCompatActivity() {
     private fun opShower(){
         if(gamePlayable){
             if(p1Chance){
-                Toast.makeText(this, "$pOneName's Chance", Toast.LENGTH_SHORT).show()
+                chanceTV.text = "$pOneName's Chance"
             }
             else{
-                Toast.makeText(this, "$pTwoName's Chance", Toast.LENGTH_SHORT).show()
+                chanceTV.text = "$pTwoName's Chance"
             }
         }
     }
